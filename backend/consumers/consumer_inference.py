@@ -26,7 +26,7 @@ cat_dim = ohe.transform([["1","10000","10000"]]).shape[1]
 input_dim = cat_dim + 2
 
 model = FlightDelayModel(input_dim)
-model.load_state_dict(torch.load("../model/flight_delay_model.pt", map_location="cpu"))
+model.load_state_dict(torch.load("model/flight_delay_model.pt", map_location="cpu"))
 model.eval()
 print("Model loaded")
 bootstrap_servers = os.getenv("KAFKA_BOOTSTRAP_SERVERS")
